@@ -14,7 +14,7 @@ class BusController extends Controller
      */
     public function index()
     {
-        //
+        return view('detailbus');
     }
 
     /**
@@ -46,7 +46,7 @@ class BusController extends Controller
      */
     public function show(Bus $bus)
     {
-        //
+        return view('shopbus');
     }
 
     /**

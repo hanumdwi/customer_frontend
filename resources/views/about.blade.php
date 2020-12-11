@@ -53,14 +53,16 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="{{ url('home') }}">MDC Trans</a>
+      <a class="navbar-brand" href="{{ url('/') }}">
+			  <img src="{{ url('asset/vegfoods/images/mdc.png') }}" class="rounded" alt="image">
+	    </a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="{{ url('home') }}" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Information</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -331,8 +333,12 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Vegefoods</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+              <h2 class="ftco-heading-2">PT. MDC Trans</h2>
+              <p> merupakan PO bus pariwisata yang berasal dari Lamongan, Jawa Timur.
+                  Bus pariwisata ini melayani transportasi wisata di Indonesia, khususnya di Pulau Jawa, Bali, Lombok, 
+                  dan sebagian Sumatera.
+                  Bus pariwisata MDC Trans Trans melayani antar jemput, drop bandara, trip wisata, wisata ziarah, 
+                  kunjungan industri dan atau menyesuaikan kebutuhan pelanggan.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -384,7 +390,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  PT. Madina Dzikra Cemerlang <script>document.write(new Date().getFullYear());</script> | MDC Trans Lamongan <i class="icon-truck color-danger" aria-hidden="true"></i> <a href="#" target="_blank"></a>
+						  PT. Madina Dzikra Cemerlang <script>document.write(new Date().getFullYear());</script> | MDC Trans Lamongan <i class="icon-bus color-danger" aria-hidden="true"></i> <a href="#" target="_blank"></a>
 						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
           </div>

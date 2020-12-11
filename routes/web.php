@@ -18,3 +18,27 @@ Route::get('/', function () {
 });
 
 Route::get('about', 'AboutController@index');
+Route::get('shopbus', 'BusController@show');
+Route::get('detailbus', 'BusController@index');
+Route::get('detailpaket', 'PaketWisataController@index');
+
+//Customer
+Route::get('datacustomer','CustomerController@index');
+Route::get('createcustomer','CustomerController@create');
+Route::post('customerstore', 'CustomerController@store');
+Route::get('customeredit/{id}', 'CustomerController@edit');
+Route::post('customerupdate', 'CustomerController@update');
+Route::get('customerdestroy/{id}', 'CustomerController@destroy');
+//================================================================================
+
+Route::get('cartawal', 'CartController@indexawal');
+Route::get('datacart', 'CartController@indexawal');
+Route::post('sewa_busstore', 'CartController@store');
+Route::get('cart', 'CartController@indexcart');
+Route::get('cart/{id}', 'CartController@index')->name('cart_index');
+
+
+//===================================================================================
+//====================================================================================
+
+//====================================================================

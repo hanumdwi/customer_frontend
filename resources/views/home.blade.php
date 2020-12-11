@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Vegefoods - Free Bootstrap 4 Template by Colorlib</title>
+    <title>PT. MDC Trans Lamongan</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
@@ -52,14 +52,16 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="{{ url('home') }}">MDC Trans</a>
+		<a class="navbar-brand" href="{{ url('/') }}">
+			<img src="{{ url('asset/vegfoods/images/mdc.png') }}" class="rounded" alt="image">
+	    </a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="{{ url('home') }}" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Information</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
@@ -72,9 +74,9 @@
               </div>
             </li>
 	          <li class="nav-item"><a href="{{ url('about') }}" class="nav-link">About</a></li>
-	          <li class="nav-item"><a href="{{ url('testimony') }}" class="nav-link">Testimony</a></li>
+	          <!-- <li class="nav-item"><a href="{{ url('testimony') }}" class="nav-link">Testimony</a></li> -->
 	          <li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
-	          <li class="nav-item cta cta-colored"><a href="{{ url('cart') }}" class="nav-link"><span class="icon-shopping_cart"></span></a></li>
+	          <li class="nav-item cta cta-colored"><a href="{{ url('cart') }}" class="nav-link"><span class="icon-bus"></span></a></li>
 
 	        </ul>
 	      </div>
@@ -173,7 +175,7 @@
 					<div class="col-md-8">
 						<div class="row">
 							<div class="col-md-6 order-md-last align-items-stretch d-flex">
-								<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(asset/vegfoods/images/category.jpg);">
+								<div class="category-wrap-2 ftco-animate img align-self-stretch d-flex" style="background-image: url(asset/vegfoods/images/logoc.jpg);">
 									<div class="text text-center">
 										<h2>MDC Trans</h2>
 										<p>Protect during your journey</p>
@@ -182,14 +184,14 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(asset/vegfoods/images/category-1.jpg);">
+								<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(asset/vegfoods/images/ai.jpg);">
 									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="#">Fruits</a></h2>
+										<h2 class="mb-0"><a href="#">Tour Unisla</a></h2>
 									</div>
 								</div>
-								<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(asset/vegfoods/images/category-2.jpg);">
+								<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(asset/vegfoods/images/ibu2.jpg);">
 									<div class="text px-3 py-1">
-										<h2 class="mb-0"><a href="#">Vegetables</a></h2>
+										<h2 class="mb-0"><a href="#">Tour Ibu - Ibu</a></h2>
 									</div>
 								</div>
 							</div>
@@ -197,14 +199,14 @@
 					</div>
 
 					<div class="col-md-4">
-						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(asset/vegfoods/images/category-3.jpg);">
+						<div class="category-wrap ftco-animate img mb-4 d-flex align-items-end" style="background-image: url(asset/vegfoods/images/garasigede.jpeg);">
 							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Juices</a></h2>
+								<h2 class="mb-0"><a href="#">Our Garage</a></h2>
 							</div>		
 						</div>
-						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(asset/vegfoods/images/category-4.jpg);">
+						<div class="category-wrap ftco-animate img d-flex align-items-end" style="background-image: url(asset/vegfoods/images/bapak2.jpeg);">
 							<div class="text px-3 py-1">
-								<h2 class="mb-0"><a href="#">Dried</a></h2>
+								<h2 class="mb-0"><a href="#">Tour Bapak - Bapak</a></h2>
 							</div>
 						</div>
 					</div>
@@ -226,115 +228,36 @@
     		<div class="row">
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-1.jpg" alt="Colorlib Template">
-    						<span class="status">30%</span>
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/baground3.jpeg" alt="Colorlib Template">
+    						
     						<div class="overlay"></div>
     					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Bell Pepper</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
+	    					
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-2.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/baground1.jpeg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Strawberry</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-3.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/baground2.jpeg" alt="Colorlib Template">
 	    					<div class="overlay"></div>
 	    				</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Green Beans</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-4.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/bismillah.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Purple Cabbage</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
     				</div>
     			</div>
             </div>
@@ -356,130 +279,51 @@
     		<div class="row">
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-5.jpg" alt="Colorlib Template">
-    						<span class="status">30%</span>
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/candi.jpg" alt="Colorlib Template">
+    						
     						<div class="overlay"></div>
     					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Tomatoe</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span class="mr-2 price-dc">$120.00</span><span class="price-sale">$80.00</span></p>
-		    					</div>
-	    					</div>
-	    					<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
+	    					
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-6.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/bedugul.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Brocolli</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-7.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/1.jpg" alt="Colorlib Template">
 	    					<div class="overlay"></div>
 	    				</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Carrots</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
     				</div>
     			</div>
     			<div class="col-md-6 col-lg-3 ftco-animate">
     				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/product-8.jpg" alt="Colorlib Template">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="asset/vegfoods/images/malang.jpg" alt="Colorlib Template">
     						<div class="overlay"></div>
     					</a>
-    					<div class="text py-3 pb-4 px-3 text-center">
-    						<h3><a href="#">Fruit Juice</a></h3>
-    						<div class="d-flex">
-    							<div class="pricing">
-		    						<p class="price"><span>$120.00</span></p>
-		    					</div>
-	    					</div>
-    						<div class="bottom-area d-flex px-3">
-	    						<div class="m-auto d-flex">
-	    							<a href="#" class="add-to-cart d-flex justify-content-center align-items-center text-center">
-	    								<span><i class="ion-ios-menu"></i></span>
-	    							</a>
-	    							<a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-	    								<span><i class="ion-ios-cart"></i></span>
-	    							</a>
-	    							<a href="#" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
-	    							</a>
-    							</div>
-    						</div>
-    					</div>
+    					
     				</div>
     			</div>
-    		</div>
+            </div>
     	</div>
     </section>
 		
-		<section class="ftco-section img" style="background-image: url(asset/vegfoods/images/bg_3.jpg);">
+		<!-- <section class="ftco-section img" style="background-image: url(asset/vegfoods/images/gumuk.jpeg);">
     	<div class="container">
 				<div class="row justify-content-end">
           <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
           	<span class="subheading">Best Price For You</span>
             <h2 class="mb-4">Deal of the day</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-            <h3><a href="#">Spinach</a></h3>
-            <span class="price">$10 <a href="#">now $5 only</a></span>
+            <p>Let's tour with us!</p>
+            <h3><a href="#">Bali 1 Malam - Bus Besar</a></h3>
+            <span class="price">Rp. 10.500.000 <a href="#">now Rp. 10.300.000 only</a></span>
             <div id="timer" class="d-flex mt-5">
 						  <div class="time" id="days"></div>
 						  <div class="time pl-3" id="hours"></div>
@@ -489,7 +333,7 @@
           </div>
         </div>   		
     	</div>
-    </section>
+    </section> -->
 
     <section class="ftco-section testimony-section">
       <div class="container">
@@ -633,8 +477,12 @@
         <div class="row mb-5">
           <div class="col-md">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Vegefoods</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
+			<h2 class="ftco-heading-2">PT. MDC Trans</h2>
+              <p> Merupakan PO bus pariwisata yang berasal dari Lamongan, Jawa Timur.
+                  Bus pariwisata ini melayani transportasi wisata di Indonesia, khususnya di Pulau Jawa, Bali, Lombok, 
+                  dan sebagian Sumatera.
+                  Bus pariwisata MDC Trans Trans melayani antar jemput, drop bandara, trip wisata, wisata ziarah, 
+                  kunjungan industri dan atau menyesuaikan kebutuhan pelanggan.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                 <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                 <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -646,9 +494,9 @@
             <div class="ftco-footer-widget mb-4 ml-md-5">
               <h2 class="ftco-heading-2">Menu</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Shop</a></li>
+                <li><a href="#" class="py-2 d-block">Informasi</a></li>
                 <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Journal</a></li>
+                <li><a href="#" class="py-2 d-block">Testimony</a></li>
                 <li><a href="#" class="py-2 d-block">Contact Us</a></li>
               </ul>
             </div>
@@ -658,15 +506,13 @@
               <h2 class="ftco-heading-2">Help</h2>
               <div class="d-flex">
 	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	                <li><a href="#" class="py-2 d-block">Shipping Information</a></li>
-	                <li><a href="#" class="py-2 d-block">Returns &amp; Exchange</a></li>
-	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
-	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
+	                <li><a href="#" class="py-2 d-block">Booking Information</a></li>
+	                <li><a href="#" class="py-2 d-block">Make an Appoitment</a></li>
+					<li><a href="#" class="py-2 d-block">Contact</a></li>
 	              </ul>
-	              <ul class="list-unstyled">
-	                <li><a href="#" class="py-2 d-block">FAQs</a></li>
+	              <!-- <ul class="list-unstyled">
 	                <li><a href="#" class="py-2 d-block">Contact</a></li>
-	              </ul>
+	              </ul> -->
 	            </div>
             </div>
           </div>
@@ -675,9 +521,9 @@
             	<h2 class="ftco-heading-2">Have a Questions?</h2>
             	<div class="block-23 mb-3">
 	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Jl. Soewoko No.43 A, RT.2/RW.2, Jetis, Kec. Lamongan, Kabupaten Lamongan, Jawa Timur 62211</span></li></br>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">0823-6330-6033</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">groupmdc@gmail.com</span></a></li>
 	              </ul>
 	            </div>
             </div>
@@ -686,7 +532,7 @@
         <div class="row">
           <div class="col-md-12 text-center">
             <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-						  PT. Madina Dzikra Cemerlang <script>document.write(new Date().getFullYear());</script> | MDC Trans Lamongan <i class="icon-truck color-danger" aria-hidden="true"></i> <a href="#" target="_blank"></a>
+						  PT. Madina Dzikra Cemerlang <script>document.write(new Date().getFullYear());</script> | MDC Trans Lamongan <i class="icon-bus color-danger" aria-hidden="true"></i> <a href="#" target="_blank"></a>
 						  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 						</p>
           </div>

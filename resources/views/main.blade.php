@@ -27,11 +27,68 @@
     <link rel="stylesheet" href="asset/vegfoods/css/flaticon.css">
     <link rel="stylesheet" href="asset/vegfoods/css/icomoon.css">
     <link rel="stylesheet" href="asset/vegfoods/css/style.css">
-    
-    @yield('head')
+  
 
   </head>
+  <body class="goto-here">
+		<div class="py-1 bg-danger">
+    	<div class="container">
+    		<div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
+	    		<div class="col-lg-12 d-block">
+		    		<div class="row d-flex">
+		    			<div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <span class="text">(0322) 3101285</span>
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						    <span class="text">groupmdc@gmail.com</span>
+					    </div>
+					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+						    <span class="text">PT. MDC Trans &amp; 24/7 Discussion</span>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+		  </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+		<a class="navbar-brand" href="{{ url('/') }}">
+			<img src="{{ url('asset/vegfoods/images/mdc.png') }}" class="rounded" alt="image">
+	    </a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item active"><a href="{{ url('/') }}" class="nav-link">Home</a></li>
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Information</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="{{ url('shopbus') }}">Armada</a>
+                <!-- <a class="dropdown-item" href="{{ url('detailbus') }}">Informasi Armada</a> -->
+                <a class="dropdown-item" href="{{ url('shoppaket') }}">Paket Wisata</a>
+                <!-- <a class="dropdown-item" href="{{ url('detailpaket') }}">Informasi Paket Wisata</a> -->
+                <!-- <a class="dropdown-item" href="{{ url('cart') }}">Cart</a> -->
+                <a class="dropdown-item" href="{{ url('checkout') }}">Booking</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="{{ url('about') }}" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="{{ url('testimony') }}" class="nav-link">Testimony</a></li>
+	          <li class="nav-item"><a href="{{ url('contact') }}" class="nav-link">Contact</a></li>
+	          <li class="nav-item cta cta-colored"><a href="{{ url('cart') }}" class="nav-link"><span class="icon-bus"></span></a></li>
+
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+  </div>
   @yield('container')
+		</div>
+	
+	</div>
   <footer class="ftco-footer ftco-section">
       <div class="container">
       	<div class="row">

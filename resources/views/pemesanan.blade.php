@@ -88,14 +88,14 @@
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
           	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
-            <h1 class="mb-0 bread">My Cart</h1>
+            <h1 class="mb-0 bread">Pemesanan</h1>
           </div>
         </div>
       </div>
 	</div>
-	</br>
-</br>
-</br>
+    </br>
+    </br>
+
 <section id="hero">
   <div class="container">
     <div class="row">
@@ -107,49 +107,146 @@
               <hr>
             </div>
             <div class="col-md-8 text-left">
-            <p class="alert alert-primary">
+
+            <form action="sewa_bus_category_store" method="post" accept-charset="utf-8">
+               {{ csrf_field() }}
+               <input type="hidden" name="token_rahasia" value="72827582Uduagd86275gbdahgahgfa">
+             
+
+              <p class="alert alert-primary">
                 Isi data pemesanan Anda dengan lengkap dan benar.
               </p>
-                                <form action="sewa_busstore" method="post">
-                                @csrf
-                                <div class="form-group">
-                                    
-                                </div>
-                                <div class="form-group">
-                                    <label for="TGL_SEWA" class="col-form-label">Start Date :</label>
-                                    <input type="date" class="form-control" id="TGL_SEWA" name="TGL_SEWA" required>
-                                    </div>
-                                <div class="form-group">
-                                    <label for="TGL_AKHIR_SEWA">End Date :</label>
-                                    <input type="date" class="form-control create-event-datepicker" id="TGL_AKHIR_SEWA" name="TGL_AKHIR_SEWA" required>
-                                    </div>
-                                <div class="form-group">
-                                    <label for="JAM_SEWA" class="col-form-label">Start Time :</label>
-                                    <input type="time" class="form-control" id="JAM_SEWA" name="JAM_SEWA">
-                                    </div>
-                                <div class="form-group">
-                                    <label for="JAM_AKHIR_SEWA" class="col-form-label">End Time :</label>
-                                    <input type="time" class="form-control" id="JAM_AKHIR_SEWA" name="JAM_AKHIR_SEWA">
-                                    </div>
-                                
-                                
-                                    <div class="modal-footer">
-                            <button type="submit" class="btn btn-primary" id="berhasil">Next</button>
-                            </div>
-                            </form>
-                            </div>
-                            <div class="col-md-4">
+
+
+              <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Pilih Armada</label>
+              <div class="col-md-8">
+                <select name="ID_CATEGORY" class="form-control" id="ID_CATEGORY">
+                    @foreach($category_armada as $c)
+                                       
+                        <option value="{{$c->ID_CATEGORY}}">{{$c->NAMA_CATEGORY}}</option>
+                                       
+                    @endforeach                 
+                </select>
+              </div>
+            </div>
+
+              <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Pilih Tujuan Sewa</label>
+              <div class="col-md-8">
+                <select name="TUJUAN_SEWA" class="form-control" id="TUJUAN_SEWA1" onchange="getPrice()">
+                    @foreach($pricelist_sewa_armada as $pr)
+                                        
+                        <option id="TUJUAN_SEWA1{{$pr->ID_PRICELIST}}" value="{{$pr->ID_PRICELIST}}" 
+                        data-pricelist="{{$pr->PRICELIST_SEWA}}">{{$pr->TUJUAN_SEWA}}</option>
+                                        
+                    @endforeach                 
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Tanggal Sewa<span class="text-danger">*</span></label>
+              <div class="col-sm-8">
+                <input type="date" name="TANGGAL_SEWA_BUS" class="form-control tanggal">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Tanggal Akhir Sewa<span class="text-danger">*</span></label>
+              <div class="col-sm-8">
+                <input type="date" name="TANGGAL_AKHIR_SEWA" class="form-control tanggal">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Harga<span class="text-danger">*</span></label>
+              <div class="col-sm-8">
+                <input type="number"  name="hargasewa" id="hargasewa1" class="form-control" readonly
+                onchange="getTotal()">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Jumlah<span class="text-danger">*</span></label>
+              <div class="col-sm-8">
+                <input type="number" name="QUANTITY" class="form-control"  
+                placeholder="Jumlah" min="1" max="3" required id="qty" onchange="getTotal()">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Sub Total<span class="text-danger">*</span></label>
+              <div class="col-sm-8">
+                <input type="number" name="subtotal" id="subtotal1" class="form-control">
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Nama Anda<span class="text-danger">*</span></label>
+              <div class="col-sm-8">
+                <input type="text" name="NAMA_CUSTOMER" class="form-control" placeholder="Nama Anda" required>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Nomor HP/Whatsapp <span class="text-danger">*</span></label>
+              <div class="col-sm-8">
+                <input type="text" name="TELEPHONE" class="form-control" placeholder="Nomor HP/Whatsapp" required>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Email</label>
+              <div class="col-sm-8">
+                <input type="email" name="EMAIL_CUSTOMER" class="form-control" 
+                placeholder="Email Anda" required>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="col-sm-4 control-label text-right">Alamat</label>
+              <div class="col-sm-8">
+                <textarea name="ALAMAT" class="form-control" placeholder="Alamat"></textarea>
+              </div>
+            </div>
+
+              <div class="form-group row">
+                  <label class="col-sm-4 control-label"></label>
+                  <div class="col-sm-8">
+                    <div class="btn-group">
+                        <button type="submit" name="submit" class="btn btn-primary btn-lg">
+                          <i class="fa fa-save"></i> Kirim pesanan
+                        </button>
+                        <button type="reset" name="submit" class="btn btn-info btn-lg" value="reset">
+                          <i class="fa fa-times"></i> Reset
+                        </button>
+                    </div>
+                </div>
+              </div>
+              </form>
+            </div>
+
+            <div class="col-md-4">
                 <img src="{{ url('asset/vegfoods/images/bismillah.jpg') }}" class="img img-thumbnail img-fluid" >  
             </div>
-                            </div>
-			</div>
-      </br>
-      </br>
-      </br>
-		</section>
-    <section class="ftco-section bg-light">
-		</section>
-							<footer class="ftco-footer ftco-section">
+
+            <div class="col-md-12">
+               <hr>
+                <p>Anda sudah melakukan pembayaran? Silakan lakukan <a href="{{ url('konfirmasi') }}">Konfirmasi Pembayaran</a>.</p>
+                <hr>
+             </div>     
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </br>
+  </br>
+</section><!-- End Hero -->
+
+<footer class="ftco-footer ftco-section">
       <div class="container">
       	<div class="row">
       		<div class="mouse">
@@ -229,6 +326,29 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+<script>
+
+    function getPrice(){
+        console.log("masuk");
+        var tujuan = document.getElementById('TUJUAN_SEWA1').value;
+        var tmp = document.getElementsByTagName('select')[0].getAttribute("TUJUAN_SEWA[]");
+        console.log(tmp);
+        var ratings =  $('#TUJUAN_SEWA1'+tujuan).data('pricelist');
+        var price = document.getElementById('hargasewa1').value;
+        //    var harga = $('#TUJUAN_SEWA1'+this.value).data('pricelist');
+        console.log(ratings);
+        $('#hargasewa1').val(ratings);
+    }
+
+    function getTotal(){
+        var sub = document.getElementById('hargasewa1').value;
+        var kuantiti = document.getElementById('qty').value;
+        var subtotal = (Number(sub*kuantiti));
+        $('#subtotal1').val(subtotal);
+    }
+
+</script>
+
 
   <script src="asset/vegfoods/js/jquery.min.js"></script>
   <script src="asset/vegfoods/js/jquery-migrate-3.0.1.min.js"></script>
@@ -246,6 +366,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="asset/vegfoods/js/google-map.js"></script>
   <script src="asset/vegfoods/js/main.js"></script>
-    
+
   </body>
 </html>

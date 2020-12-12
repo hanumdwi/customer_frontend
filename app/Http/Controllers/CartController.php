@@ -128,7 +128,7 @@ class CartController extends Controller
             DB::rollback();
             throw $ex;
         }
-             return redirect('datacart')->with('insert','data berhasil di tambah');
+             return redirect('cart')->with('insert','data berhasil di tambah');
     }
 
     /**

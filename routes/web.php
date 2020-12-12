@@ -37,6 +37,10 @@ Route::post('sewa_busstore', 'CartController@store');
 Route::get('cart', 'CartController@indexcart');
 Route::get('cart/{id}', 'CartController@index')->name('cart_index');
 
+Route::get('pemesanan', 'SewaDetailController@indexawal');
+Route::post('sewa_bus_category_store', 'SewaDetailController@store');
+Route::get('pemesanan_berhasil/{id}', 'SewaDetailController@berhasil');
+
 
 //===================================================================================
 //====================================================================================

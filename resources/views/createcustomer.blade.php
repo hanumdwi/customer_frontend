@@ -83,7 +83,7 @@
 	    </div>
 	  </nav>
     <!-- END nav -->
-    <div class="hero-wrap hero-bread" style="background-image: url('asset/vegfoods/images/bg_1.jpg');">
+    <div class="hero-wrap hero-bread" style="background-image: url('asset/vegfoods/images/baground2.jpeg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -93,39 +93,69 @@
         </div>
       </div>
     </div>
-
-    <section class="ftco-section ftco-cart">
-			<div class="container">
-				<div class="row">
-    			<div class="col-md-12 ftco-animate">
-    				<div class="cart-list">
+</br>
+</br>
+</br>
+<section id="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+        <div class="kotak">
+          <div class="row">
+            <div class="col-md-12 text-center">
+            <h1>Formulir Pemesanan</h1>
+              <hr>
+            </div>
+            <div class="col-md-8 text-left">
+            <p class="alert alert-primary">
+                Isi data diri Anda dengan lengkap dan benar.
+              </p>
                             <form action="customerstore" method="post">
                                 @csrf
-                                <div class="form-group">
-                                    <label for="nama" class="col-form-label">Nama :</label>
-                                    <input type="text" class="form-control" id="nama" name="nama">
+                                <div class="form-group row">
+                                  <label class="col-sm-4 control-label text-right">Nama Anda<span class="text-danger">*</span></label>
+                                  <div class="col-sm-8">
+                                    <input type="text"  id="nama" name="nama" class="form-control" placeholder="Nama Anda" required>
+                                  </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="email" class="col-form-label">Email :</label>
-                                    <input type="email" class="form-control" id="email" name="email">
-                                    </div>
-                                <div class="form-group">
-                                    <label for="telephone" class="col-form-label">Telephone :</label>
-                                    <input type="telephone" class="form-control" id="telephone" name="telephone">
-                                    </div>
-                                <div class="form-group">
-                                    <label for="alamat" class="col-form-label">Alamat :</label>
-                                    <input type="alamat" class="form-control" id="alamat" name="alamat">
-                                    </div>
+
+                                <div class="form-group row">
+                                  <label class="col-sm-4 control-label text-right">Nomor HP/Whatsapp <span class="text-danger">*</span></label>
+                                  <div class="col-sm-8">
+                                    <input type="text" id="telephone" name="telephone" class="form-control" placeholder="Nomor HP/Whatsapp" required>
+                                  </div>
+                                </div>
+
+                                <div class="form-group row">
+                                  <label class="col-sm-4 control-label text-right">Email</label>
+                                  <div class="col-sm-8">
+                                    <input type="email" id="email" name="email" class="form-control" 
+                                    placeholder="Email Anda" required>
+                                  </div>
+                                </div>
+
+                                <div class="form-group row">
+                                  <label class="col-sm-4 control-label text-right">Alamat</label>
+                                  <div class="col-sm-8">
+                                    <textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat"></textarea>
+                                  </div>
+            </div>
                                 
-                            </div>
                             <div class="modal-footer">
-                            <p><a href="{{ url('cartawal') }}" class="btn btn-primary py-3 px-4">Next</a></p>
+                            <button type="submit" class="btn btn-primary" id="berhasil">Next</button>
                             </div>
                             </form>
                             </div>
+                            <div class="col-md-4">
+                <img src="{{ url('asset/vegfoods/images/bismillah.jpg') }}" class="img img-thumbnail img-fluid" >  
+            </div>
                             </div>
 			</div>
+      </br>
+      </br>
+      </br>
+		</section>
+    <section class="ftco-section bg-light">
 		</section>
                             <footer class="ftco-footer ftco-section">
       <div class="container">

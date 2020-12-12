@@ -62,7 +62,7 @@ class CustomerController extends Controller
 
         $customer->save();
 
-        return redirect('customerindex');
+        return redirect('cartawal');
     }
 
     /**

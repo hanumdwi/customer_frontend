@@ -52,6 +52,28 @@ class SewaDetailController extends Controller
     }
 }
 
+    public function indexawal()
+    {
+        $sewa_bus= Sewa_Bus::all();
+        $customer= customer::all();
+
+        $category_armada=DB::table('category_armada')->get();
+        $pricelist_sewa_armada=DB::table('pricelist_sewa_armada')->get();
+        $sewa_bus_category=DB::table('sewa_bus_category')
+        ->join('sewa_bus','sewa_bus_category.ID_SEWA_BUS', '=', 'sewa_bus.ID_SEWA_BUS')
+        ->join('pricelist_sewa_armada','sewa_bus_category.ID_PRICELIST', '=', 'pricelist_sewa_armada.ID_PRICELIST')
+        ->join('category_armada', 'pricelist_sewa_armada.ID_CATEGORY', '=', 'category_armada.ID_CATEGORY')
+        ->select('sewa_bus_category.ID_SEWA_BUS', 'sewa_bus_category.ID_PRICELIST',
+        'sewa_bus_category.QUANTITY', 'sewa_bus_category.TOTAL',
+        'category_armada.NAMA_CATEGORY', 'pricelist_sewa_armada.TUJUAN_SEWA', 'pricelist_sewa_armada.PRICELIST_SEWA')
+        ->get();
+
+
+        return view('pemesanan', ['sewa_bus' =>$sewa_bus,'customer'=>$customer],
+        ['sewa_bus_category'=>$sewa_bus_category,'pricelist_sewa_armada'=>$pricelist_sewa_armada, 'category_armada'=>$category_armada]);
+    }
+
+
     public function indexpaket(Request $request, $id)
     {
         if(!Session::get('login')){
@@ -130,7 +152,56 @@ class SewaDetailController extends Controller
      */
     public function store(Request $request)
     {
+        DB::table('pricelist_sewa_armada')->insert([
+            'ID_CATEGORY'  =>  $request->ID_CATEGORY,
+            'TUJUAN_SEWA'  =>  $request->TUJUAN_SEWA,
+        ]);
+
+        DB::table('sewa_bus')->insert([
+            'ID_SEWA_BUS' => $request->ID_SEWA_BUS,
+            'TGL_SEWA_BUS' => $request->TGL_SEWA_BUS,
+            'TGL_AKHIR_SEWA' => $request->TGL_AKHIR_SEWA,
+            'ID_CUSTOMER' => $request->ID_CUSTOMER,
+            'ID_PENGGUNA' => $request->ID_PENGGUNA
+            ]);
         
+    //    dd($request);
+
+        // foreach($request['ID_PRICELIST'] as $pricelist_sewa_armada){
+        //     DB::table('sewa_bus_category')->insert([
+        //         'ID_SEWA_BUS' => $request->ID_SEWA_BUS,
+        //         'ID_PRICELIST' => $pricelist_sewa_armada,
+        //         'PRICELIST_SEWA' => $request['PRICELIST_SEWA'][$pricelist_sewa_armada],
+        //         'QUANTITY' => $request['QUANTITY'][$pricelist_sewa_armada],
+        //         'TOTAL' => $request['TOTAL'][$pricelist_sewa_armada],
+        //         'DP' => $request['DP'][$pricelist_sewa_armada],
+        //         'SISA_BAYAR' => $request['SISA_BAYAR'][$pricelist_sewa_armada]
+        //         ]);
+        //     }
+
+        return redirect('pemesanan_berhasil')->with('insert','data berhasil di tambah');
+    }
+
+    public function berhasil(Request $request, $id)
+    {
+        $sewa_bus= Sewa_Bus::find($id);
+        
+        $customer= customer::find($sewa_bus->ID_CUSTOMER);
+
+        $category_armada=DB::table('category_armada')->get();
+        $pricelist_sewa_armada=DB::table('pricelist_sewa_armada')->get();
+        $sewa_bus_category=DB::table('sewa_bus_category')
+        ->join('sewa_bus','sewa_bus_category.ID_SEWA_BUS', '=', 'sewa_bus.ID_SEWA_BUS')
+        ->join('pricelist_sewa_armada','sewa_bus_category.ID_PRICELIST', '=', 'pricelist_sewa_armada.ID_PRICELIST')
+        ->join('category_armada', 'pricelist_sewa_armada.ID_CATEGORY', '=', 'category_armada.ID_CATEGORY')
+        ->select('sewa_bus_category.ID_SEWA_BUS', 'sewa_bus_category.ID_PRICELIST',
+        'sewa_bus_category.QUANTITY', 'sewa_bus_category.TOTAL',
+        'category_armada.NAMA_CATEGORY', 'pricelist_sewa_armada.TUJUAN_SEWA', 'pricelist_sewa_armada.PRICELIST_SEWA')
+        ->get();
+
+
+        return view('pemesanan_berhasil', ['sewa_bus' =>$sewa_bus,'customer'=>$customer],
+        ['sewa_bus_category'=>$sewa_bus_category,'pricelist_sewa_armada'=>$pricelist_sewa_armada, 'category_armada'=>$category_armada]);
     }
 
     /**

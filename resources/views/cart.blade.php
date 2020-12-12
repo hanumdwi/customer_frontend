@@ -93,15 +93,26 @@
         </div>
       </div>
 	</div>
-
-<section class="ftco-section ftco-cart">
-<div class="container">
-				<div class="row">
-    			<div class="col-md-12 ftco-animate">
-    				<div class="cart-list">
-
-
-
+	</br>
+	</br>
+<section id="hero">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 order-1 order-lg-2 hero-img" data-aos="zoom-out" data-aos-delay="300">
+        <div class="kotak">
+          <div class="row">
+            <div class="col-md-12 text-center">
+            <h1>Formulir Pemesanan</h1>
+              <hr>
+            </div>
+            <div class="col-md-12 text-left">
+			<p class="alert alert-primary">
+                Isi data pemesanan Anda dengan lengkap dan benar.
+              </p>
+					<input type="text" class="form-control" id="search" name="search" value="" placeholder="Enter Your Bus!" onkeydown="getModal(event)">
+</br>
+<form method ="post" action="posstore">
+        @csrf
 	    				<table class="table">
 						    <thead class="thead-primary">
 						      <tr class="text-center">
@@ -116,22 +127,40 @@
 						    <tbody>
 						      <tr class="text-center">
                               @foreach($sewa_bus_category as $sbd)
-						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+						        <td class="product-remove"><a href="#"><span class="ion-ios-close"></a></td>
+						        <td>
+						        <select name="ID_CATEGORY" class="form-control" id="ID_CATEGORY">
+									@foreach($category_armada as $c)
+													
+										<option value="{{$c->ID_CATEGORY}}">{{$c->NAMA_CATEGORY}}</option>
+													
+									@endforeach                 
+								</select>
+						        </td>
+						        <td>
+									<select name="TUJUAN_SEWA" class="form-control" id="TUJUAN_SEWA1" onchange="getPrice()">
+										@foreach($pricelist_sewa_armada as $pr)
+															
+											<option id="TUJUAN_SEWA1{{$pr->ID_PRICELIST}}" value="{{$pr->ID_PRICELIST}}" 
+											data-pricelist="{{$pr->PRICELIST_SEWA}}">{{$pr->TUJUAN_SEWA}}</option>
+															
+										@endforeach                 
+									</select>
+								</td>
 						        
-						        <td>{{ $sbd -> NAMA_CATEGORY }}</td>
-						        
-						        <td>{{ $sbd -> TUJUAN_SEWA}}</td>
-						        
-						        <td>{{ $sbd -> PRICELIST_SEWA}}</td>
+						        <td>
+									<input type="number"  name="hargasewa" id="hargasewa1" class="form-control" readonly
+									onchange="getTotal()">
+								</td>
 						        
 						        <td class="quantity">
-						        	<div class="input-group mb-3">
-                                    <input type="number" class="form-control" value="1" id="qty">
-					          	</div>
+                                    	<input type="number" name="QUANTITY" class="form-control"  
+                						placeholder="Jumlah" min="1" max="3" required id="qty" onchange="getTotal()">
+					          
 					          </td>
 						        
 						        <td class="total">
-                                    <input type="subtotal" class="form-control" name="subtotal" id="subtotal1">
+									<input type="number" name="subtotal" id="subtotal1" class="form-control">
                                 </td>
                               </tr><!-- END TR-->
                               @endforeach
@@ -156,9 +185,20 @@
     						<!-- <span>$17.60</span> -->
     					</p>
     				</div>
-    				<p><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Payment</a></p>
+					<div class="modal-footer">
+						<button type="submit" class="btn btn-danger"><i class="icon-times"></i>  Reset</button>
+						<button type="submit" class="btn btn-success"><i class="icon-save"></i>  Insert</button>
+    				
+					</div>
+                            </form>
+                            </div>
     			</div>
                 </section>
+</br>
+</br>
+<section class="ftco-section bg-light">
+		</section>
+
             <footer class="ftco-footer ftco-section">
       <div class="container">
       	<div class="row">
@@ -239,6 +279,28 @@
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
+  <script>
+
+	function getPrice(){
+		console.log("masuk");
+		var tujuan = document.getElementById('TUJUAN_SEWA1').value;
+		var tmp = document.getElementsByTagName('select')[0].getAttribute("TUJUAN_SEWA[]");
+		console.log(tmp);
+		var ratings =  $('#TUJUAN_SEWA1'+tujuan).data('pricelist');
+		var price = document.getElementById('hargasewa1').value;
+		//    var harga = $('#TUJUAN_SEWA1'+this.value).data('pricelist');
+		console.log(ratings);
+		$('#hargasewa1').val(ratings);
+	}
+
+	function getTotal(){
+		var sub = document.getElementById('hargasewa1').value;
+		var kuantiti = document.getElementById('qty').value;
+		var subtotal = (Number(sub*kuantiti));
+		$('#subtotal1').val(subtotal);
+	}
+
+</script>
 
   <script src="asset/vegfoods/js/jquery.min.js"></script>
   <script src="asset/vegfoods/js/jquery-migrate-3.0.1.min.js"></script>
